@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static custom_tags %}
+{% block title %}
+   Scrumptious Recipes
+{% endblock title %}
+{% block extra_nav %}
+    <a id="navgrid-item-right" href="{% url 'signup' %}" class="navhref">Add User</a>
+{% endblock extra_nav %}
+{% block content %}
+    <main class="listmain">
+        <div class="listhead">
+                <center><h2>sizzling offerings,<br> well seasoned & satisfying</h2></center>
+        </div>
+        <div id="recipegrid">
+            {% for recipe in recipe_list %}
+                {% random_background 125 as bg_index %}
+                <div id="grid-item"  style="--bg-image: url('{% static 'images/backgrounds/background_' %}{{ bg_index }}.png');">
+                    <h3>
+                        <a id="gridh3" href="{% url 'show_recipe' recipe.id %}">{{ recipe.title }}</a>
+                    </h3>
+                    <img src="{{ recipe.picture }}" alt="Recipe image">
+                </div>
+            {% empty %}
+                <p>There are no recipes.</p>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock content %}
+
+<!-- add to div class before h3 if required: {% cycle 'normal-background' 'normal-background' 'special-background' %} -->

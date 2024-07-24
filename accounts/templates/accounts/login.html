@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Login! - Scrumptious Recipes
+{% endblock title %}
+
+{% block content %}
+<main>
+<div class="formview">
+  <h1>Login! Login! Login! Login! Login! Login! Login! Login! Login! Login!</h1></div>
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.as_table }}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}">
+        {% endif %}
+        <br>
+        <button type="submit">Login</button>
+    </div>
+</form>
+</main>
+{% endblock content %}
+{% load static %}

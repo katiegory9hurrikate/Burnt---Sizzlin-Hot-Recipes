@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Scrumptious Recipes
+{% endblock title %}
+{% block extra_nav %}
+    <a id="navgrid-item-right" href="{% url 'edit_recipe' recipe_object.id %}" class="navhref">Edit Recipe</a>
+{% endblock extra_nav %}
+{% block content %}
+<main class="detailmain">
+
+    <div class="titlecontainer">
+        <div id="detailtitle">
+            <h1>{{ recipe_object.title }}&nbsp;&nbsp;{{ recipe_object.title }}&nbsp;&nbsp;{{ recipe_object.title }}</h1>
+            <p>{{ recipe_object.description }}</p>
+        </div>
+    </div>
+    <div id="detailtimeserv">
+        <span id="time">Cook Time: 20 mins</span>
+        <span id="serv">Servings: 2</span>
+    </div>
+
+    <div class="detailcontainer">
+        <div id="detailtools"><h2>Tools</h2>
+            <table id="tools_table">
+                <tbody>
+                    <tr>
+                        <ul>
+                            <li>Cast Iron or Stainless Steel Pan</li>
+                            <li>Fish Spatula</li>
+                        </ul>
+                    </tr>
+                </tbody>
+            </table>
+            <img src={{recipe_object.picture }} width="300px" alt="Detail Page Image">
+        </div>
+        <div id="detailingrs">
+            <h2>Ingredients</h2>
+            <table id="ing_table">
+                <thead id="ingredients">
+                    <tr>
+                        <th id="head_ing_amt" align="center">Amount</th>
+                        <th id="head_ing_item" align="center">Food Item</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ingredient in recipe_object.ingredients.all %}
+                    <tr id="comment">
+                        <td id="ing_amount">{{ ingredient.amount }}</td>
+                        <td id="ing_item">{{ ingredient.food_item }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div id="detailsteps">
+            <h2>Steps</h2>
+            <table id="steps_table">
+                <tbody>
+                    <tr>
+                            <ol>
+                            {% for step in recipe_object.steps.all %}
+                                <li>{{ step.instruction }}</li>
+                            {% endfor %}
+                            </ol>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </main>
+    {% endblock content %}

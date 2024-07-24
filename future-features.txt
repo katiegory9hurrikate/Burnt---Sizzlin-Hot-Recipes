@@ -1,0 +1,65 @@
+Upcoming Features:
+
+Recipe create/edit/detail:
+- Dynaminc Ingredient, Step, and Tools adding/editing in create.html and edit.html
+- Cook Time/Prep Time/Servings added to create.html and edit.html
+- Nutrition Info
+- Allergens list
+    > allergen substitutions in comments and/or pop under on hover/click
+- Skill level rating + links to skill dictionary as needed
+- Upload photos instead of linking photos
+- Videos/Photos embedded into steps & collapsable
+- User Generated Notes on detail.html
+- Metric/Imperial conversions
+- Serving conversions (+/-)
+- Convention/Convection conversions
+- Printable recipe card generator
+
+Lite:
+- User Profiles and Family groups
+    > identify adults vs children (ie cooking members vs non cooking members)
+        + rate recipes with 👍/👎 for each family member's preference
+        + assign allergies/preferences to each family member
+- Grocery list builder
+    > ability to export to excel, google sheets or existing Mac OS/iOS reminders app
+        + reminders app has a built-in grocery list function
+- Search for recipes by name, user, cook time, ingredient, or other tags
+- Recipe suggester based on user-inputted grocery list
+
+Pro:
+- Work groups with assigned users
+- Work Group Admin generated training guides
+    > videos + photos embedded into recipe detail page
+    > skill dictionary links embedded into recipe details
+    > knowledge checks
+- Prep/par checklists
+    > date/time/user tracking with photo verification
+- supply ordering integration
+    > exportable CSV/xlsx ordering lists
+    > user-manageable vendor list
+        + assign SKUs to specific vendors
+    > submit directly to vendor website or email to vendor
+- POS integration
+    > track sales data for predictive ordering based on:
+        + previous two week sales and,
+        + previous year's same three week sales
+            ~ three weeks data would include the week before, the week of, and the week after
+- Service notes card generator for FOH staff
+    > allergens & available substitutions
+    > unique ingredient/sourcing notes
+    > visual service notes (ie, mix at table; pour sauce over side veg; two-man drop; etc.)
+    > wine pairings
+- ** Bar/sommelier specific: **
+    > Bottle mass oz/grams to liquid oz/ml tracker
+    > classic/custom cocktail recipe book
+    > bar training guide
+    > prep/par checklists
+    > top shelf tasting notes
+    > sommelier notes
+    > vendor management/ordering
+
+Knowledge:
+- Ingredient substitution guide
+- Hard-to-find ingredient locater w/ physical & web store listings
+- (pro) Local vendor black book
+- Skill dictionary

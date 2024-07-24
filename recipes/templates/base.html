@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> {% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static "css/recipes.css" %}">
+    </head>
+    <body>
+        <div class="header">
+            <div class="navcontainer">
+                <div class="row">
+                    <div class="lrflexrow">
+                        <nav class="navleft">
+                            <ul class="nav">
+                            {% if user.is_authenticated %}
+                                <li><div id="hello">Hello, <br> {{ user.username }}</div></li>
+                                <li><a id="navgrid-item-left" href="{% url 'recipe_list' %}">Ours</a></li>
+                                <li><a id="navgrid-item-left" href="{% url 'my_recipe_list' %}">Mine</a></li>
+                            {% else %}
+                                <li><a id="navgrid-item-left" href="{% url 'recipe_list' %}">All Recipes</a></li>
+                            {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="navlogo col2">
+                        <a href="{% url 'recipe_list' %}"><img src="{% static 'images/burnt.png' %}" alt="Logo"></a>
+                    </div>
+
+                    <div class="lrflexrow">
+                        <nav class="navright">
+                            <ul class="nav">
+                                {% if user.is_authenticated %}
+                                <li><a id="navgrid-item-right" href="{% url 'create_recipe' %}">New Recipe</a></li>
+                                <li>{% block extra_nav %}{% endblock extra_nav %}</li>
+                                <li><a id="navgrid-item-right" href="{% url 'user_logout' %}">Logout</a></li>
+                            {% else %}
+                                <li><a id="navgrid-item-right" href="{% url 'signup' %}">Sign Up</a></li>
+                                <li><a id="navgrid-item-right" href="{% url 'user_login' %}">Login</a></li>
+                            {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% comment %} <div class="background-image">
+            <img src="{% static 'images/topwave2.png' %}" alt="waves">
+        </div> {% endcomment %}
+
+        <div class="header-image">
+            <img src="{% static 'images/castiron6.png' %}" alt="hot pan">
+        </div>
+
+        {% block content %}{% endblock content %}
+        <footer>
+            <div class="footer-content">
+                <p>Made with love by <a href="https://www.instagram.com/atchafalulu/">@atchafalulu</a></p>
+            </div>
+        </footer>
+    </body>
+</html>

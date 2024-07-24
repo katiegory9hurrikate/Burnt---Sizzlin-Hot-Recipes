@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Scrumptious Recipes
+{% endblock title %}
+{% block extra_nav %}
+    <a id="navgrid-item-right" href="{% url 'signup' %}" class="navhref">Add User</a>
+{% endblock extra_nav %}
+{% block content %}
+<main>
+    <div class="formview">
+        <h1>Edit the recipe!&nbsp;&nbsp;Edit the recipe!&nbsp;&nbsp;Edit the recipe!&nbsp;&nbsp;Edit the recipe!&nbsp;&nbsp;Edit the recipe!&nbsp;&nbsp;</h1></div>
+    <p></p>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_table }}
+            <br>
+            <center><button type="submit">Edit</button></center>
+        </div>
+      </form>
+</main>
+{% endblock content %}
+{% load static %}

@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* standard */
+.permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal; }
+
+.radio-canada-big {
+  font-family: "Radio Canada Big", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body {
+    background: rgb(255, 255, 255);
+    font-family: "Radio Canada Big", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    height: 100%;
+    justify-content: center;
+    align-items: center;}
+
+footer {
+    padding-top:100px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: #000000;
+    margin: 0px;
+    position: static;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+
+title {
+    color: black;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    align-self: center; }
+
+h1 {
+    color: black;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50pt;
+    margin: 10px;}
+
+.listhead {
+    display: grid;
+    justify-items: center; }
+
+a {
+    color: #d42926;
+    font-weight: none;
+    text-decoration: none;
+    text-transform:none; }
+
+a:link {
+    color: #d42926;
+    font-weight: none;
+    text-decoration: none;
+    text-transform:none; }
+
+a:active {
+    color: #d42926;
+    font-weight: none;
+    text-decoration: none;
+    text-transform:none; }
+
+a:visited {
+    color: #d42926;
+    font-weight: none;
+    font-style: italic;
+    text-decoration: none;
+    text-transform:none; }
+
+a:hover {
+    color: #d42926;
+    font-weight: none;
+    font-style: italic; }
+
+
+/* main recipe list */
+
+.listmain {
+    display: grid;
+    padding-top: 75px;
+    place-items: center; }
+
+.listhead {
+    padding-bottom: 50px;}
+
+#recipegrid {
+    display: grid;
+    column-gap: 25px;
+    row-gap: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    justify-content: center;
+    place-items: center;
+    width: 80%; }
+
+#grid-item {
+    position: relative; /* Necessary for positioning the ::before element */
+    text-align: center;
+    width: 225px;
+    margin: 15px;
+    place-self: center;
+    color: #ffffff;
+    z-index: 1; /* Ensure content stays above the pseudo-element */
+    overflow: visible; /* Allow the ::before pseudo-element to be visible outside the card */
+}
+
+#grid-item::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: calc(100% + 175px);
+    height: calc(100% + 175px);
+    background-image: var(--bg-image);
+    background-size: max(220px);
+    background-position:center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Place the background behind the card content */
+    border-radius: inherit;
+}
+
+#grid-item::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100%);
+    height: calc(100%);
+    z-index: 3; /* Place the pseudo-element above the card content */
+    border-radius: inherit;
+}
+
+#grid-item > * {
+    position: relative;
+    z-index: 2;
+}
+
+#grid-item h3 {
+    position: relative;
+    margin-top: 0;
+    font-weight:500;
+    z-index: 4;}
+
+#gridh3:hover {
+    color: #d42926;
+    font-weight: none;
+    font-style: italic; }
+
+#gridh3 {
+    position: relative;
+    margin-top: 0;
+    font-weight:500;
+    z-index: 4;
+    margin-top: 0;
+    font-size: 16px;
+    color: #000000;
+    text-shadow: 1px 1px 2px #ffffffaa; }
+
+#grid-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 360px;
+    border: 1px solid black }
+
+#grid-item p {
+    margin-bottom: 0;
+    color:#000000; }
+
+
+/* recipe detail page */
+
+.header-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.detailmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.titlecontainer {
+    display: grid;
+    grid-template-rows: auto;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.detailcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    width: 80%;
+    gap: 10px;
+    padding: 20px;
+}
+
+.detailcontainer div {
+    padding: 20px;
+    background-color: #ffb300;
+    color: #ffffff;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .detailcontainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+#detailtitle {
+    padding-bottom: 25px;
+}
+
+#detailtimeserv {
+    background-color: #FCB016;
+    color: #F2F2F2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 16pt;
+    width: 80%;
+}
+
+#time {
+    margin-right: 200px;
+}
+
+#ing_table {
+    width: 100%;
+}
+
+#head_ing_amt {
+    background-color: #ffb300;
+}
+
+#head_ing_item {
+    background-color: #ffb300;
+}
+
+tbody td {
+    padding-left: 10px;
+    padding-right: 20px;
+    margin: 0;
+}
+
+#ing_amount {
+    width: 75px;
+    align-items: start;
+}
+
+#ing_item {
+    width: auto;
+    align-items: start;
+}
+
+tbody #comment:nth-child(even) {
+    background-color: #fad09f;
+}
+
+#detailsteps {
+    align-content: start;
+}
+
+#detailsteps ol li {
+    margin-bottom: 10px;
+}
+
+/* #steps-section {
+    background-color: #ffbab04d;
+    justify-self: start;
+    margin: 0;
+    padding: 10px;
+    width: 80%;
+}
+
+#steps-section ol {
+    padding-left: 20px;
+} */
+
+
+/* navigation */
+.navgrid {
+    display: flex;
+    grid-template-columns: repeat(auto);
+    justify-items: center;
+    justify-content: space-around;
+    padding: 25px;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    color: black;
+    z-index: 5; /* Place the pseudo-element above the card content */ }
+
+#navgrid-item {
+    color: black;
+    font-weight: bold; }
+
+#navgrid-item-logout {
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 10pt;
+    background-color: white;
+    border-radius: 1px 10px 1px 10px;
+    border: 2px solid #d42926;
+    grid-column: 8;
+    justify-self: end; }
+
+#edit {
+    font-size: 10pt;
+    color: #d42926;
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 5px;}
+
+#hello {
+    font-weight: bold;
+    color: #d42926; }
+
+
+/* forms */
+.form-group {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto 1em auto; }
+
+.form-group label {
+    text-align: left;
+    margin-top: 0.8em;
+    margin-bottom: 0px;
+    font-weight: bold; }
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 1em; }
+
+.form-group button {
+    width: 100%;
+    padding: 0.7em 1.5em;
+    background-color: #ffffff;
+    color: #d42926;
+    border-radius: 1px 10px 1px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 2px solid #d42926; }
+
+.form-group button:hover {
+    background-color: #d42926;
+    border: 2px solid #fad09f;
+    color: white; }
+
+/* every third recipe has a green background */
+.normal-background {
+    background-color: #ffffff; }
+
+.special-background {
+    background-color: #ffffff; }

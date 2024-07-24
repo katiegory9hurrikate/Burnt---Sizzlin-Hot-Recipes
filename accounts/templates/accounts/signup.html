@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+Sign Up! - Scrumptious Recipes
+{% endblock title %}
+
+{% block content %}
+<main><div class="formview">
+  <h1>One of us! One of us! One of us! One of us! One of us! One of us!</h1></div>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.as_table }}
+        <br>
+       <button type="submit">Sign Up</button>
+    </div>
+</form>
+</main>
+{% endblock content %}
+{% load static %}
